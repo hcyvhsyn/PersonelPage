@@ -2,10 +2,17 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // React dosyaları için
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    
+    extend: {
+      colors: {
+        grape: "#3730a3",
+        darkgrape: "#b3b0ff"
+      }
+    },
   },
   plugins: [],
+  darkMode: "class"
 };

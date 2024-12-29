@@ -1,34 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import AboutMe from './components/AboutMe'
+import DarkModeBar from "./components/DarkModeBar"
+import NavBar from './components/NavBar'
+import Skills from './components/Skills'
+import Profile from './components/Profile'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
+import { useState } from "react";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className={`${darkMode ? 'bg-black text-white' : ''}`}>
+      <DarkModeBar className= "dark:bg-black" toggleDarkMode={toggleDarkMode} darkMode = {darkMode}/>
+      <NavBar  darkMode = {darkMode}/>
+      <AboutMe darkMode = {darkMode}/>
+      <Skills darkMode = {darkMode}/>
+      <Profile darkMode = {darkMode}/>
+      <Projects/>
+      <Footer darkMode = {darkMode}/>
+      
+    </div>
+    
   )
 }
 
