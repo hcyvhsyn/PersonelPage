@@ -1,41 +1,68 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Project2 from "../assets/images/Project2.jpg";
+import { aboutMeData } from "../data";
 
-const AboutMe = ({darkMode}) => {
+const AboutMe = ({ darkMode }) => {
   return (
-    <div className={`mx-32 flex mt-16 justify-between` }>
+    <div className={`mx-32 flex mt-16 justify-between`}>
       <div>
-        <p className="text-grape ">Huseyn Hajiyev</p>
+        <p className={`text-grape ${darkMode ? "text-lemon" : ""}`}>
+          {aboutMeData.name}
+        </p>
         <h1 className="text-[70px] font-bold w-[700px] mt-8 leading-[75px]">
-        React Enthusiast | Crafting User-Friendly Interfaces
+          {aboutMeData.title}
         </h1>
-        <p className={`mt-8 text-xs w-[600px] text-gray-600 ${ darkMode ? 'text-gray-300' : ""  }`}>
-        I am a passionate web developer with a strong foundation in modern web technologies such as JavaScript, React, and CSS. I specialize in building responsive, user-friendly websites and applications that prioritize functionality and design. I enjoy solving complex problems and turning ideas into reality through efficient and innovative coding practices. With a keen eye for detail and a commitment to continuous learning, I stay updated on the latest industry trends to deliver high-quality projects. My goal is to create digital experiences that not only meet client expectations but also enhance user engagement and satisfaction.
+        <p
+          className={`mt-8 text-xs w-[600px] text-gray-600 ${
+            darkMode ? "text-gray-200" : ""
+          }`}
+        >
+          {aboutMeData.description}
         </p>
         <div className="flex gap-8 mt-10">
-          <button className="bg-grape text-white p-4 rounded-xl max-w-[130px] w-[110px]">
+          <button
+            className={`boreder-solid border-2 border-grape text-grape font-bold p-4 rounded-xl max-w-[130px] w-[110px] hover:bg-grape hover:text-white ${
+              darkMode
+                ? "border-lemon text-lemon hover:bg-lemon hover:text-white"
+                : ""
+            }`}
+          >
             Hire Me
           </button>
 
-          <button className="border-solid border-2 p-4 rounded-xl border-grape flex justify-center items-center gap-2 max-w-[150px] w-[110px] ">
-            <span>
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="text-grape text-2xl "
-              />
+          <a
+            href="https://github.com/hcyvhsyn"
+            className={`border-solid border-2 p-4 rounded-xl border-grape text-grape flex justify-center items-center gap-2 max-w-[130px] w-[110px] hover:bg-grape hover:text-white ${
+              darkMode
+                ? "border-lemon text-lemon hover:bg-lemon hover:text-white"
+                : ""
+            }`}
+          >
+            <span
+              className={`text-inherit text-2xl ${darkMode ? "text-lemon" : ""}`}
+            >
+              <FontAwesomeIcon icon={faGithub} />
             </span>
             Github
-          </button>
-          <button className="border-solid border-2 p-4 rounded-xl border-grape flex justify-center items-center gap-2 max-w-[130px] w-[110px]">
+          </a>
+          <a
+            className={`border-solid border-2 p-4 rounded-xl border-grape text-grape flex justify-center items-center gap-2 max-w-[130px] w-[110px] hover:bg-grape hover:text-white ${
+              darkMode
+                ? "border-lemon text-lemon hover:bg-lemon hover:text-white"
+                : ""
+            }`}
+          >
             <span>
               <FontAwesomeIcon
                 icon={faLinkedin}
-                className="text-grape text-2xl "
+                className={`text-inherit text-2xl ${
+                  darkMode ? "text-inherit  " : ""
+                } `}
               />
             </span>
             Linkedin
-          </button>
+          </a>
         </div>
       </div>
       <div className="pr-32 pt-5">

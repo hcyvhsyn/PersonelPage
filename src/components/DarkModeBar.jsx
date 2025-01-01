@@ -1,6 +1,7 @@
-
+import {useState} from "react"
 
 const DarkModeBar = ({ toggleDarkMode , darkMode}) => {
+  const [language, setLanguage] = useState("tr");
 
 
 
@@ -20,9 +21,10 @@ const DarkModeBar = ({ toggleDarkMode , darkMode}) => {
           </span>
         </label>
 
-        <p className="dark:text-white">|</p>
-        <p className="text-sm text-gray-600 dark:text-gray-200">
-          <span className="text-grape dark:text-white">TÜRKÇE</span> YE GEÇ
+        <p className="dark:text-white ">|</p>
+        <p className="text-sm text-gray-600 dark:text-gray-200 w-[130px] min-w-[130px] cursor-pointer"
+        onClick={() => setLanguage(language === "tr" ? "en" : "tr")}>
+          <span className="text-grape dark:text-white">{language === "tr" ? "Switch to English" : "Türkçeye Geç"}</span> 
         </p>
       </div>
     </div>

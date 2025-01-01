@@ -7,6 +7,7 @@ import Profile from './components/Profile'
 import Projects from './components/Projects'
 import Footer from './components/Footer'
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 
 function App() {
@@ -22,12 +23,13 @@ function App() {
 
   return (
     <div className={`${darkMode ? 'bg-black text-white' : ''}`}>
+      <ToastContainer />
       <DarkModeBar className= "dark:bg-black" toggleDarkMode={toggleDarkMode} darkMode = {darkMode}/>
       <NavBar  darkMode = {darkMode}/>
       <AboutMe darkMode = {darkMode}/>
       <Skills darkMode = {darkMode}/>
       <Profile darkMode = {darkMode}/>
-      <Projects/>
+      <Projects darkMode = {darkMode}/>
       <Footer darkMode = {darkMode}/>
       
     </div>

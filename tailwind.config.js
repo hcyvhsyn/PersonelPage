@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         grape: "#3730a3",
-        darkgrape: "#b3b0ff"
+        lemon: "#b3b0ff"
       }
     },
   },
