@@ -1,8 +1,11 @@
+import ProfilePhote from "./assets/images/Project2.jpg";
+
 export const aboutMeData = {
   name: "Huseyn Hajiyev",
   title: "React Enthusiast | Crafting User-Friendly Interfaces",
   description:
     "I am a passionate web developer with a strong foundation in modern web technologies such as JavaScript, React, and CSS. I specialize in building responsive, user-friendly websites and applications that prioritize functionality and design. I enjoy solving complex problems and turning ideas into reality through efficient and innovative coding practices. With a keen eye for detail and a commitment to continuous learning, I stay updated on the latest industry trends to deliver high-quality projects. My goal is to create digital experiences that not only meet client expectations but also enhance user engagement and satisfaction.",
+    image: ProfilePhote
 };
 
 export const navBarData = [

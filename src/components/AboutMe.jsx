@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Project2 from "../assets/images/Project2.jpg";
 import { aboutMeData } from "../data";
 
 const AboutMe = ({ darkMode }) => {
@@ -68,8 +67,8 @@ const AboutMe = ({ darkMode }) => {
       <div className="pr-32 pt-5">
         <img
           height={400}
-          width={400}
-          src={Project2}
+          width={800}
+          src={aboutMeData.image}
           className="w-[600px] h-[400px] object-cover rounded-lg shadow-xl "
           alt=""
         />
