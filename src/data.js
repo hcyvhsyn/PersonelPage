@@ -1,4 +1,4 @@
-import ProfilePhote from "./assets/images/Project2.jpg";
+import ProfilePhote from "./assets/images/Project2.png";
 
 export const aboutMeData = {
   name: "Huseyn Hajiyev",
