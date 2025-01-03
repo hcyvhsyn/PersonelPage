@@ -1,23 +1,28 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { aboutMeData } from "../data";
+import { aboutMeDataTr } from "../dataTr";
 
-const AboutMe = ({ darkMode }) => {
+const AboutMe = ({ darkMode, language }) => {
   return (
-    <div className={`mx-32 flex mt-16 justify-between`}>
+    <div
+      className={`sm:flex-col lg:mx-32 flex lg:flex-row mt-16 justify-between `}
+    >
       <div>
-        <p className={`text-grape ${darkMode ? "text-lemon" : ""}`}>
+        <p className={`text-grape ${darkMode ? "text-lemon" : ""} `}>
           {aboutMeData.name}
         </p>
-        <h1 className="text-[70px] font-bold w-[700px] mt-8 leading-[75px]">
-          {aboutMeData.title}
+        <h1 className="lg:text-[70px] font-bold lg:w-[700px] mt-8 leading-[75px] ">
+          {language === "tr" ? aboutMeDataTr.title : aboutMeData.title}
         </h1>
         <p
           className={`mt-8 text-xs w-[600px] text-gray-600 ${
             darkMode ? "text-gray-200" : ""
           }`}
         >
-          {aboutMeData.description}
+          {language === "tr"
+            ? aboutMeDataTr.description
+            : aboutMeData.description}
         </p>
         <div className="flex gap-8 mt-10">
           <button
@@ -27,7 +32,7 @@ const AboutMe = ({ darkMode }) => {
                 : ""
             }`}
           >
-            Hire Me
+            {language === "tr" ? "İşe Al" : "Hire Me"}
           </button>
 
           <a
@@ -39,7 +44,9 @@ const AboutMe = ({ darkMode }) => {
             }`}
           >
             <span
-              className={`text-inherit text-2xl ${darkMode ? "text-lemon" : ""}`}
+              className={`text-inherit text-2xl ${
+                darkMode ? "text-lemon" : ""
+              }`}
             >
               <FontAwesomeIcon icon={faGithub} />
             </span>

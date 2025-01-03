@@ -1,19 +1,29 @@
 import { profileData } from "../data";
+import { profileDataTr } from "../dataTr";
 
-const Profile = ({ darkMode }) => {
+const Profile = ({ darkMode, language }) => {
   return (
-    <div className="mx-32 mt-10">
-      <h3 className="text-4xl font-bold">Profile</h3>
-      <div className="flex gap-48 items-center">
+    <div className="lg:mx-32 mt-10">
+      <h3 className="text-4xl font-bold">{language === "tr" ? "Profil" : "Profile"}</h3>
+      <div className="flex lg:flex-row gap-48 items-center flex-wrap ">
         <div>
           <h4
             className={`font-bold text-3xl text-grape mt-1 mb-8 ${
               darkMode ? "text-lemon" : ""
             }`}
           >
-            {profileData.header.title}
+            {language === "tr" ? profileDataTr.header.title : profileData.header.title}
           </h4>
-          {profileData.details.map((ques, index) => (
+          {language === "en" ? profileData.details.map((ques, index) => (
+            <div key={index} className="flex gap-5 items-center">
+              <div className="flex gap-10 w-[200px]">
+                <p className="font-bold">{ques.question}</p>
+              </div>
+              <div>
+                <p className="font-light  w-[200px]">{ques.answer}</p>
+              </div>
+            </div>
+          )) : profileDataTr.details.map((ques, index) => (
             <div key={index} className="flex gap-5 items-center">
               <div className="flex gap-10 w-[200px]">
                 <p className="font-bold">{ques.question}</p>
@@ -30,7 +40,7 @@ const Profile = ({ darkMode }) => {
               darkMode ? "text-lemon" : ""
             }`}
           >
-            {profileData.header.title}
+            {language === "tr" ? profileDataTr.header.subtitle : profileData.header.subtitle}
           </h4>
           <p className="w-[550px] mr-32">{profileData.header.description}</p>
         </div>
