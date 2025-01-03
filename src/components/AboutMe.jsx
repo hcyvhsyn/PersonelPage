@@ -17,7 +17,7 @@ const AboutMe = ({ darkMode, language }) => {
         </h1>
         <p
           className={`mt-8 text-xs w-[600px] text-gray-600 ${
-            darkMode ? "text-gray-200" : ""
+            darkMode ? "text-inherit" : ""
           }`}
         >
           {language === "tr"
@@ -45,7 +45,7 @@ const AboutMe = ({ darkMode, language }) => {
           >
             <span
               className={`text-inherit text-2xl ${
-                darkMode ? "text-lemon" : ""
+                darkMode ? "text-inherit" : ""
               }`}
             >
               <FontAwesomeIcon icon={faGithub} />
@@ -53,7 +53,7 @@ const AboutMe = ({ darkMode, language }) => {
             Github
           </a>
           <a
-            className={`border-solid border-2 p-4 rounded-xl border-grape text-grape flex justify-center items-center gap-2 max-w-[130px] w-[110px] hover:bg-grape hover:text-white ${
+            className={`border-solid border-2 p-4 rounded-xl border-grape text-grape flex justify-center items-center gap-2 max-w-[130px] w-[110px] hover:bg-grape hover:text-white cursor-pointer ${
               darkMode
                 ? "border-lemon text-lemon hover:bg-lemon hover:text-white"
                 : ""

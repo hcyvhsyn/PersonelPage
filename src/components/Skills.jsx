@@ -37,8 +37,8 @@ const Skills = ({ darkMode, language }) => {
                   {skill.title}
                 </h2>
                 <p
-                  className={`mt-4 text-xs w-full text-gray-600 ${
-                    darkMode ? "text-gray-200" : ""
+                  className={`mt-4 text-xs w-[350px] text-gray-600 ${
+                    darkMode ? "text-inherit" : ""
                   }`}
                 >
                   {skill.description}
